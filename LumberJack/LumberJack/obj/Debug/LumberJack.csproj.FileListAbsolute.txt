@@ -1,0 +1,12 @@
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\LumberJack.exe.config
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\LumberJack.exe
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\LumberJack.pdb
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\SaleaeSocketApi.dll
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\SaleaeSocketApi.pdb
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\obj\Debug\LumberJack.csprojResolveAssemblyReference.cache
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\obj\Debug\LumberJack.exe
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\obj\Debug\LumberJack.pdb
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\LumberJack.exe.manifest
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\bin\Debug\LumberJack.application
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\obj\Debug\LumberJack.exe.manifest
+C:\Users\GPM\Source\Repos\LumberJack\LumberJack\obj\Debug\LumberJack.application
