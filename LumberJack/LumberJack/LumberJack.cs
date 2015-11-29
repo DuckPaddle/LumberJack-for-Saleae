@@ -63,7 +63,7 @@ namespace LumberJackConsole
             {
                 Console.WriteLine("Error while connecting: " + ex.Message);
                 Console.ReadLine();
-                return;
+                System.Environment.Exit(3);
             }
             StringHelper.WriteLine("Connected");
             Console.WriteLine("");
@@ -103,9 +103,11 @@ namespace LumberJackConsole
 
             Console.WriteLine("currently active device: " + active_device.Name);
             Console.WriteLine("");
+#if DEMO_SETTING
             Console.WriteLine("Press Enter to Continue");
             Console.ReadLine();
-
+#endif
+            // Get hardware list
             var analyzers = Client.GetAnalyzers();
 
             if (analyzers.Any())
@@ -113,8 +115,10 @@ namespace LumberJackConsole
                 Console.WriteLine("Current analyzers:");
                 analyzers.ToList().ForEach(x => Console.WriteLine(x.AnalyzerType));
                 Console.WriteLine("");
-                Console.WriteLine("Press Enter to Continue");
+#if DEMO_SETTING
+                Console.WriteLine("Press Enter to Start Capture");
                 Console.ReadLine();
+#endif
             }
 
             // This code sets the Saleae configurations
@@ -178,15 +182,27 @@ namespace LumberJackConsole
             //Console.WriteLine( "" );
             //Console.WriteLine( "Press Enter to Exit" );
             //Console.ReadLine();
-#endif      
+#endif
             // New Stuff
             Console.WriteLine("Capture starting");
             // Filename sequence number
             i_Seq = 0;
             while (true)
             {
-                // loop here forever (or canceled from Saleae
-                Client.Capture();
+                // loop here forever (or canceled from Saleae)
+                try
+                { // a little more elegant exit
+                    Client.Capture();
+                }
+                catch (Saleae.SocketApi.SaleaeSocketApiException)
+                {
+                    // calling this a normal exit for now..
+                    Console.WriteLine("End of Session");
+                    System.Environment.Exit(1);
+                }
+
+
+
                 dt_current = DateTime.Now;
                 Console.WriteLine("Captured, Processing Started");
 
